@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potential_Obstacles__c</fullName>
+    <externalId>false</externalId>
+    <label>Potential Obstacles</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Time</fullName>
+                <default>false</default>
+                <label>Time</label>
+            </value>
+            <value>
+                <fullName>Childcare</fullName>
+                <default>false</default>
+                <label>Childcare</label>
+            </value>
+            <value>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+                <label>Transportation</label>
+            </value>
+            <value>
+                <fullName>Not enough money</fullName>
+                <default>false</default>
+                <label>Not enough money</label>
+            </value>
+            <value>
+                <fullName>Personal health Lack of motivation</fullName>
+                <default>false</default>
+                <label>Personal health Lack of motivation</label>
+            </value>
+            <value>
+                <fullName>Lack of study area</fullName>
+                <default>false</default>
+                <label>Lack of study area</label>
+            </value>
+            <value>
+                <fullName>School 1st time/or long time</fullName>
+                <default>false</default>
+                <label>School 1st time/or long time</label>
+            </value>
+            <value>
+                <fullName>Taking classes in English</fullName>
+                <default>false</default>
+                <label>Taking classes in English</label>
+            </value>
+            <value>
+                <fullName>Failure to complete</fullName>
+                <default>false</default>
+                <label>Failure to complete</label>
+            </value>
+            <value>
+                <fullName>Your employer being upset</fullName>
+                <default>false</default>
+                <label>Your employer being upset</label>
+            </value>
+            <value>
+                <fullName>Homebound/Cannot Travel</fullName>
+                <default>false</default>
+                <label>Homebound/Cannot Travel</label>
+            </value>
+            <value>
+                <fullName>Consumer Care</fullName>
+                <default>false</default>
+                <label>Consumer Care</label>
+            </value>
+            <value>
+                <fullName>Too Far</fullName>
+                <default>false</default>
+                <label>Too Far</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

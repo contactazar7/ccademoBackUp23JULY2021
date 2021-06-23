@@ -1,0 +1,43 @@
+<aura:component controller="AddStudentController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute type="Class_Management__c[]" name="classMgmntList"/>
+    
+    <aura:handler name="init"  value="{!this}"  action="{!c.fetchStudent}"/>        
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">        
+       
+        
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Enrollment Name">Enrollment Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Class Name">Class Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Status">Status</div>
+                </th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.classMgmntList}" var="a">
+                <tr>
+                    <td data-label="Enrollment Name">
+                        <div class="slds-truncate" title="">{!a.Enrollment__r.Contact__r.Name}</div>
+                    </td>
+                    <td data-label="Class Name">
+                        <div class="slds-truncate" title="">{!a.Class__r.Name}</div>
+                    </td>
+                    <td data-label="Status">
+                        <div class="slds-truncate" title="">{!a.Status__c}</div>
+                    </td>               
+                    
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+   
+</aura:component>

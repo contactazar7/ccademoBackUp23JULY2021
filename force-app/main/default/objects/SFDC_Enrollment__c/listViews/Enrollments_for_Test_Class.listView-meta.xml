@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrollments_for_Test_Class</fullName>
+    <columns>NAME</columns>
+    <columns>Class_Name__c</columns>
+    <columns>Hand_Washing__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Class_Name__c</field>
+        <operation>equals</operation>
+        <value>Test Class</value>
+    </filters>
+    <label>Enrollments for Test Class</label>
+</ListView>

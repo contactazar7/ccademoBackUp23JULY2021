@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CNA_Hours__c</fullName>
+    <externalId>false</externalId>
+    <formula>VALUE(IF( AND(Roaster__c  =  CNA_Training__r.Roster__c,  ISPICKVAL( Status__c , &apos;Present&apos;) )  ,   TEXT (CNA_Training__r.Hours__c) , NULL))</formula>
+    <label>CNA Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

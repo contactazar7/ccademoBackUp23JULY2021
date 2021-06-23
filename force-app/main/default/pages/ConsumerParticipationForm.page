@@ -1,0 +1,373 @@
+<apex:page controller="ConsumerForm_apex" standardStylesheets="false" showheader="false" sidebar="false" docType="html-5.0">
+    <style>
+        .logoalign {
+        display: block;
+        margin-center: auto;
+        margin-left: auto;
+        width: 300px;
+        height:150px;
+        }
+        
+        .paragraphs{
+        display: block;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        margin-left: 0;
+        margin-right: 2em;
+        }
+        
+        .inputAligns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top:15px;
+        }
+        
+        .inputChkAlign {
+        display: flex;
+        justify-content: space-between;
+        margin-top:15px;
+        }
+        
+        .inputchkbox {
+        margin-right:700px !important;
+        width: 20px;
+        height: 20px;
+        background-color: blue;
+        border: 1px solid black;
+        }
+        
+        .inputAligns .pull-left {
+        display: flex;
+        align-items: center;
+        }
+        
+        .button1
+        {
+        background-color:#42ABD7;
+        font-weight:bold;
+        color:#2C4F5C;
+        border: none;
+        padding: 20px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 18px;
+        align-items: right;
+        align:right
+        }
+        
+    </style>    
+    <script>
+    window.onload = function() {
+        document.getElementById('consumerform2').style.display = 'none';
+        document.getElementById('consumerform3').style.display = 'none';
+        document.getElementById('consumerform4').style.display = 'none';
+        
+    };
+    function myFunctionsk1() {
+        document.getElementById("consumerform1").style.display = "none";
+        document.getElementById("consumerform2").style.display = "block";
+        document.getElementById("consumerform3").style.display = "none";
+        document.getElementById("consumerform4").style.display = "none";
+    }
+    function myFunctionsk2() {
+        document.getElementById("consumerform1").style.display = "block";
+        document.getElementById("consumerform2").style.display = "none";
+        document.getElementById("consumerform3").style.display = "none";
+        document.getElementById("consumerform4").style.display = "none";
+    }
+    function myFunctionsk3() {
+        document.getElementById("consumerform3").style.display = "block";
+        document.getElementById("consumerform1").style.display = "none";
+        document.getElementById("consumerform2").style.display = "none";
+        document.getElementById("consumerform4").style.display = "none";
+        
+    }
+    function myFunctionsk4() {
+        document.getElementById("consumerform2").style.display = "block";
+        document.getElementById("consumerform3").style.display = "none";
+        document.getElementById("consumerform1").style.display = "none";
+        document.getElementById("consumerform4").style.display = "none";
+        
+    }
+    function myFunctionsk5() {
+        document.getElementById("consumerform4").style.display = "block";
+        document.getElementById("consumerform1").style.display = "none";
+        document.getElementById("consumerform2").style.display = "none";
+        document.getElementById("consumerform3").style.display = "none";
+    }
+    function myFunctionsk6() {
+        document.getElementById("consumerform3").style.display = "block";
+        document.getElementById("consumerform2").style.display = "none";
+        document.getElementById("consumerform4").style.display = "none";
+        document.getElementById("consumerform1").style.display = "none";
+    }
+    
+    </script>
+    <apex:stylesheet value="{!$Resource.consumer_form}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <div class="form-box" style="padding-bottom:60px;">
+        <form> 
+            <apex:image id="theImage" value="{!$Resource.CLTCEC	}"  styleClass="logoalign" alt="Description of image here"/>
+            <!-- <div class="row" style="width:100%"> -->
+            <apex:pageMessages />
+            <apex:form styleClass="form-step form-horizontal custom-validation" html-novalidate="true" html-autocomplete="off">
+                <div id="consumerform1" style="padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:20px;">
+                    <h4 class="lu blue bold">Step 1 of 4</h4>
+                    <h3 class="mb-0 bold">Consumer Participation Form</h3>
+                    <p class="small mb-3">
+                        <em>(This form required some information from the Health Seeker)</em>
+                    </p>
+                    <!--<div class="col-md-7 pr-md-5">-->
+                    <!--<div class="col-sm-8"> -->
+                    <div class="form-group has-feedback" >
+                        <div class="position-relative" style="margin-top:30px;margin-bottom:30px;">
+                            <div class="inputAligns">
+                                <span> 
+                                    <apex:input id="seekerfirstnameid"
+                                                value="{!seekerfirstname}"
+                                                html-placeholder="Enter Your First Name **"
+                                                styleClass="form-control inputAligns"
+                                                required="true"
+                                                style="width:500px;"
+                                                type="text"
+                                                /> 
+                                </span>
+                            </div>
+                            <div class="inputAligns">
+                                <span >
+                                    <apex:input id="seekerlastnameid"
+                                                value="{!seekerlastname}"
+                                                html-placeholder="Enter Your Last Name **"
+                                                styleClass="form-control inputAligns"
+                                                required="true"
+                                                style="width:500px;"
+                                                type="text"
+                                                /> 
+                                </span>
+                            </div>
+                            <div class="inputAligns">
+                                <span >
+                                    <apex:input id="seekerageid"
+                                                value="{!seekerage}"
+                                                html-placeholder="Enter Your Age **"
+                                                styleClass="form-control inputAligns"
+                                                style="width:500px;"
+                                                type="number"
+                                                /> 
+                                </span>
+                            </div>
+                            <div class="inputAligns">
+                                <span >
+                                    <apex:selectList id="Choosegenderid" value="{!selectvals}" size="1" 
+                                                     styleClass="form-control inputAligns"
+                                                     required="true"
+                                                     style="width:500px;"
+                                                     title="Choose Your Gender"
+                                                     >
+                                        <apex:selectOption itemValue="Male" itemLabel="Male"/>
+                                        <apex:selectOption itemValue="Female" itemLabel="Female"/>
+                                        <apex:selectOption itemValue="Other" itemLabel="Other"/>
+                                    </apex:selectList> 
+                                </span>
+                            </div>
+                            <div class="inputAligns">
+                                <span >
+                                    <apex:input id="seekeremailid"
+                                                value="{!seekeremail}"
+                                                html-placeholder="Enter Your Valid Email-id **"
+                                                styleClass="form-control inputAligns"
+                                                required="true"
+                                                style="width:500px;"
+                                                type="email"
+                                                /> 
+                                </span>
+                            </div>
+                            <div class="inputAligns">
+                                <span >
+                                    <apex:input id="seekerphoneid"
+                                                value="{!seekerphone}"
+                                                html-placeholder="Enter Your Valid Phone Number **"
+                                                styleClass="form-control inputAligns"
+                                                required="true"
+                                                style="width:500px;"
+                                                type="tel"
+                                                /> 
+                                </span>
+                            </div>
+                            
+                        </div> 
+                    </div>
+                    <apex:commandButton onclick="myFunctionsk1()" value="Next" title="Click Next to go to Step 2" styleClass="button1" style="float:centre;padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:50px;"/>
+                </div>
+                
+                <!-- Step 2 -->
+                
+                <div id="consumerform2" style="padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:20px;">
+                    <h4 class="lu blue bold">Step 2 of 4</h4>
+                    <h3 class="mb-0 bold"> Informed Consent Form - Consumer &amp;POA</h3>
+                    <p class="small mb-3">
+                        <em>(This form required some information from the Health Seeker)</em>
+                    </p>
+                    <div >
+                        <div>
+                            <div>
+                                <P class="paragraphs">I &nbsp;&nbsp;<apex:input value="{!consent_form_seekrName}"
+                                                                                html-placeholder=" "
+                                                                                type="text"
+                                                                                />  &nbsp;&nbsp;son of &nbsp;&nbsp;
+                                    <apex:input value="{!consent_form_seekrparentName}"
+                                                html-placeholder=" "
+                                                type="text"
+                                                />  &nbsp;&nbsp;aged&nbsp;&nbsp;
+                                    <apex:input value="{!consent_form_seekrAged}"
+                                                html-placeholder=" "
+                                                type="text"
+                                                />&nbsp;&nbsp;resident of&nbsp;&nbsp;
+                                    <apex:input value="{!consent_form_seekrresident}"
+                                                html-placeholder=" "
+                                                type="text"
+                                                />&nbsp;&nbsp; being under the care of &nbsp;&nbsp;
+                                    <apex:input value="{!consent_form_seekrtreatment}"
+                                                html-placeholder=" "
+                                                type="text"
+                                                />&nbsp;&nbsp; 
+                                </P><p>
+                                Do hereby give consent to the 
+                                performance of medical and health caretaker.
+                                upon myself/upon &nbsp;&nbsp;
+                                <apex:input value="{!consent_form_seekrrelatedName}"
+                                            html-placeholder=" "
+                                            type="text"
+                                            />&nbsp;&nbsp;aged &nbsp;&nbsp;
+                                <apex:input value="{!consent_form_seekrAged}"
+                                            html-placeholder=" "
+                                            type="text"
+                                            /> &nbsp;&nbsp; who is related to me as &nbsp;&nbsp; 
+                                <apex:input value="{!consent_form_seekrRelated}"
+                                            html-placeholder=" "
+                                            type="text"
+                                            />&nbsp;&nbsp;(mention here relationship ,e.g son, 
+                                daughter,father,mother,wife,etc.,).
+                                </p><p>
+                                I declare that I am more than18 years of age.I have been informed that there are inherent risks involved in the treatment/procedure.
+                                I have signed this consent voluntarily out of free will without any pressure and in my fell senses. 
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+                    <apex:commandButton onclick="myFunctionsk2()" value="Previous" title="Click Previous to go to Step 1" styleClass="button1" style="float:center;padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:50px;"/>
+                    <apex:commandButton onclick="myFunctionsk3()" value="Next" title="Click Next to go to Step 3" styleClass="button1" style="float:center;padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:50px;"/>
+                </div>
+                
+                
+                <!-- Step 3 -->
+                
+                <div id="consumerform3" style="padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:20px;">
+                    <h4 class="lu blue bold">Step 3 of 4</h4>
+                    <h3 class="mb-0 bold">Consumer Authorization Form</h3>
+                    <p class="small mb-3">
+                        <em>(This form required some information from the Health Seeker)</em>
+                    </p>
+                    <div class="form-group has-feedback" >
+                        <div class="position-relative" style="margin-top:30px;margin-bottom:30px;">
+                            <div class="inputChkAlign" style="padding-top:10px;padding-bottom:10px;">
+                                <span >
+                                    <P>
+                                        Interested in availing services with CLT?: &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; 
+                                        <apex:inputCheckbox id="C_Interested_in_availing_services_with_CLTid"
+                                                            value="{!C_Interested_in_availing_services_with_CLT}"
+                                                            styleClass="inputchkbox"
+                                                            />
+                                    </P>
+                                </span>
+                            </div>
+                            <div class="inputAligns" style="padding-top:10px;padding-bottom:10px;">
+                                <span >
+                                    <apex:input id="ailmentid"
+                                                value="{!ailment}"
+                                                html-placeholder="Describe your problems **"
+                                                styleClass="form-control inputAligns"
+                                                required="true"
+                                                style="width:500px;"
+                                                type="text"
+                                                /> 
+                                </span>
+                            </div>
+                            <div class="inputAligns" style="padding-top:10px;padding-bottom:10px;">
+                                <span >
+                                    <apex:input id="C_Need_Provider_for_how_many_daysid"
+                                                value="{!C_Need_Provider_for_how_many_days}"
+                                                html-placeholder="Required Days"
+                                                styleClass="form-control inputAligns"
+                                                required="true"
+                                                type="text"
+                                                style="width:500px;"
+                                                /> 
+                                </span>
+                            </div>
+                            
+                            <div class="inputAligns" style="padding-top:10px;padding-bottom:10px;">
+                                <div class="form-group has-feedback">
+                                    <div class="position-relative">
+                                        <apex:input id="What_are_the_timingsid"
+                                                    value="{!C_What_are_the_timings}"
+                                                    html-placeholder="Required hours per days **"
+                                                    styleClass="form-control inputAligns has-tooltip"
+                                                    required="true"
+                                                    style="width:500px;"
+                                                    type="time"
+                                                    /> 
+                                        <i class="tooltip" style="background-image: url('{!$Resource.questions_circular_button}');"></i>
+                                        <span class="tooltiptext top">Required Timings for the Care per day?</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                      <!--  
+                        <div class="inputAligns">
+                          <apex:input id="What_are_the_timingsid"
+                            value="{!C_What_are_the_timings}"
+                            html-placeholder="Required hours per days **"
+                            styleClass="form-control inputAligns has-tooltip"
+                            required="true"
+                            style="width:500px;"
+                            type="time"
+                            /> 
+                            <i class="tooltip" style="background-image: url('{!$Resource.questions_circular_button}');"></i>
+                            <span class="tooltiptext top">The primary insured person on the account</span>
+                        </div> -->
+                        </div>
+                    </div>  
+                    <apex:commandButton onclick="myFunctionsk4()" value="Previous" title="Click Previous to go to Step 2" styleClass="button1" style="float:centre;padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:50px;"/>
+                    <apex:commandButton onclick="myFunctionsk5()" value="Next" title="Click Next to go to Step 4" styleClass="button1" style="float:centre;padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:50px;"/>
+                </div>
+                
+                <!-- Step 4 -->
+                <div id="consumerform4" style="padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:20px;">
+                    <h4 class="lu blue bold">Step 4 of 4</h4>
+                    <h3 class="mb-0 bold">Consumer Enrollment Form</h3>
+                    <p class="small mb-3">
+                        <em>(This form requires acknowledgement from the Health Seeker)</em>
+                    </p>
+                    <div style="padding-left:100px;padding-top:50px;padding-bottom:50px;">
+                        <span >
+                            <P style="font-weight:bold;font-style:sans-serif;">
+                                <apex:inputCheckbox id="Acknowledgement_CheckboxId"
+                                                    value="{!Acknowledgement_Checkbox}"
+                                                    styleClass="inputchkbox"
+                                                    /> &nbsp;&nbsp;
+                                I acknowledge that all the answers provided over the phone are true and accurate to the best of my knowledge  
+                            </P>
+                        </span>
+                    </div>  
+                    <apex:commandButton onclick="myFunctionsk6()" value="Previous" title="Click Previous to go to Step 1" styleClass="button1" style="float:centre;padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:50px;"/>
+                    <apex:commandButton action="{!step1_consumer}" value="Submit" title="Click Next to go to Step 2" styleClass="button1" style="float:centre;padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:50px;"/> 
+                </div>
+            </apex:form> 
+        </form> 
+    </div>
+</apex:page>

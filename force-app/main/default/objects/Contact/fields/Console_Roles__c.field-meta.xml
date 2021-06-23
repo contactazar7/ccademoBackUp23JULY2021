@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Console_Roles__c</fullName>
+    <externalId>false</externalId>
+    <label>Console Roles</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Activate LOA</fullName>
+                <default>false</default>
+                <label>Activate LOA</label>
+            </value>
+            <value>
+                <fullName>Activity Level 1</fullName>
+                <default>false</default>
+                <label>Activity Level 1</label>
+            </value>
+            <value>
+                <fullName>Activity Level 2</fullName>
+                <default>false</default>
+                <label>Activity Level 2</label>
+            </value>
+            <value>
+                <fullName>Activity Level 3</fullName>
+                <default>false</default>
+                <label>Activity Level 3</label>
+            </value>
+            <value>
+                <fullName>CAIPTC Mode</fullName>
+                <default>false</default>
+                <label>CAIPTC Mode</label>
+            </value>
+            <value>
+                <fullName>Class Administrator</fullName>
+                <default>false</default>
+                <label>Class Administrator</label>
+            </value>
+            <value>
+                <fullName>Class Coordinator</fullName>
+                <default>false</default>
+                <label>Class Coordinator</label>
+            </value>
+            <value>
+                <fullName>CMMI Daily Alerts</fullName>
+                <default>false</default>
+                <label>CMMI Daily Alerts</label>
+            </value>
+            <value>
+                <fullName>Community Colleges Administrator</fullName>
+                <default>false</default>
+                <label>Community Colleges Administrator</label>
+            </value>
+            <value>
+                <fullName>CPR Coordinator</fullName>
+                <default>false</default>
+                <label>CPR Coordinator</label>
+            </value>
+            <value>
+                <fullName>Data Associate</fullName>
+                <default>false</default>
+                <label>Data Associate</label>
+            </value>
+            <value>
+                <fullName>Data Auditor</fullName>
+                <default>false</default>
+                <label>Data Auditor</label>
+            </value>
+            <value>
+                <fullName>Delta Data</fullName>
+                <default>false</default>
+                <label>Delta Data</label>
+            </value>
+            <value>
+                <fullName>Files Management</fullName>
+                <default>false</default>
+                <label>Files Management</label>
+            </value>
+            <value>
+                <fullName>Funding Development Tracker</fullName>
+                <default>false</default>
+                <label>Funding Development Tracker</label>
+            </value>
+            <value>
+                <fullName>Global Administrator</fullName>
+                <default>false</default>
+                <label>Global Administrator</label>
+            </value>
+            <value>
+                <fullName>Health Net Administrator</fullName>
+                <default>false</default>
+                <label>Health Net Administrator</label>
+            </value>
+            <value>
+                <fullName>Home Care Intern (HCI)</fullName>
+                <default>false</default>
+                <label>Home Care Intern (HCI)</label>
+            </value>
+            <value>
+                <fullName>Instructor</fullName>
+                <default>false</default>
+                <label>Instructor</label>
+            </value>
+            <value>
+                <fullName>Lancaster Administrator</fullName>
+                <default>false</default>
+                <label>Lancaster Administrator</label>
+            </value>
+            <value>
+                <fullName>Local 2015</fullName>
+                <default>false</default>
+                <label>Local 2015</label>
+            </value>
+            <value>
+                <fullName>Member Resource Center</fullName>
+                <default>false</default>
+                <label>Member Resource Center</label>
+            </value>
+            <value>
+                <fullName>Oakland Administrator</fullName>
+                <default>false</default>
+                <label>Oakland Administrator</label>
+            </value>
+            <value>
+                <fullName>Physical Asset Tracker: Admin</fullName>
+                <default>false</default>
+                <label>Physical Asset Tracker: Admin</label>
+            </value>
+            <value>
+                <fullName>Physical Asset Tracker: Global</fullName>
+                <default>false</default>
+                <label>Physical Asset Tracker: Global</label>
+            </value>
+            <value>
+                <fullName>Program Coordinator</fullName>
+                <default>false</default>
+                <label>Program Coordinator</label>
+            </value>
+            <value>
+                <fullName>Program Manager</fullName>
+                <default>false</default>
+                <label>Program Manager</label>
+            </value>
+            <value>
+                <fullName>Recruiter</fullName>
+                <default>false</default>
+                <label>Recruiter</label>
+            </value>
+            <value>
+                <fullName>Recruitment Tracker</fullName>
+                <default>false</default>
+                <label>Recruitment Tracker</label>
+            </value>
+            <value>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+                <label>Regional Manager</label>
+            </value>
+            <value>
+                <fullName>Reports: All</fullName>
+                <default>false</default>
+                <label>Reports: All</label>
+            </value>
+            <value>
+                <fullName>Reports: Coordinator</fullName>
+                <default>false</default>
+                <label>Reports: Coordinator</label>
+            </value>
+            <value>
+                <fullName>Reports: Instructor</fullName>
+                <default>false</default>
+                <label>Reports: Instructor</label>
+            </value>
+            <value>
+                <fullName>Reports: Intern</fullName>
+                <default>false</default>
+                <label>Reports: Intern</label>
+            </value>
+            <value>
+                <fullName>Reports: Management</fullName>
+                <default>false</default>
+                <label>Reports: Management</label>
+            </value>
+            <value>
+                <fullName>Reports: Regional Manager</fullName>
+                <default>false</default>
+                <label>Reports: Regional Manager</label>
+            </value>
+            <value>
+                <fullName>SOP Design</fullName>
+                <default>false</default>
+                <label>SOP Design</label>
+            </value>
+            <value>
+                <fullName>Student Administrator: Data</fullName>
+                <default>false</default>
+                <label>Student Administrator: Data</label>
+            </value>
+            <value>
+                <fullName>Student Administrator: Enrollment</fullName>
+                <default>false</default>
+                <label>Student Administrator: Enrollment</label>
+            </value>
+            <value>
+                <fullName>Survey Administrator</fullName>
+                <default>false</default>
+                <label>Survey Administrator</label>
+            </value>
+            <value>
+                <fullName>Testing Account</fullName>
+                <default>false</default>
+                <label>Testing Account</label>
+            </value>
+            <value>
+                <fullName>Trust Fund Assistant</fullName>
+                <default>false</default>
+                <label>Trust Fund Assistant</label>
+            </value>
+            <value>
+                <fullName>VBC Administrative Assistant</fullName>
+                <default>false</default>
+                <label>VBC Administrative Assistant</label>
+            </value>
+            <value>
+                <fullName>Vendor Mode</fullName>
+                <default>false</default>
+                <label>Vendor Mode</label>
+            </value>
+            <value>
+                <fullName>Web App Recruiter</fullName>
+                <default>false</default>
+                <label>Web App Recruiter</label>
+            </value>
+            <value>
+                <fullName>Website Administrator</fullName>
+                <default>false</default>
+                <label>Website Administrator</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

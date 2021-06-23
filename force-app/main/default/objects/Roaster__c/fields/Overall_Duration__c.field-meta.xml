@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overall_Duration__c</fullName>
+    <externalId>false</externalId>
+    <label>Overall Duration</label>
+    <summarizedField>CNA_Training__c.Duration_of_Class__c</summarizedField>
+    <summaryFilterItems>
+        <field>CNA_Training__c.Class_Type__c</field>
+        <operation>equals</operation>
+        <value>Regular, Make-up</value>
+    </summaryFilterItems>
+    <summaryForeignKey>CNA_Training__c.Roster__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>House_Visit_List__c</fullName>
+    <externalId>false</externalId>
+    <label>House Visit List</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Call into Health Net 1</fullName>
+                <default>false</default>
+                <label>Call into Health Net 1</label>
+            </value>
+            <value>
+                <fullName>Call into Health Net 2</fullName>
+                <default>false</default>
+                <label>Call into Health Net 2</label>
+            </value>
+            <value>
+                <fullName>Call into Health Net 3</fullName>
+                <default>false</default>
+                <label>Call into Health Net 3</label>
+            </value>
+            <value>
+                <fullName>EOO</fullName>
+                <default>false</default>
+                <label>EOO</label>
+            </value>
+            <value>
+                <fullName>Health Net Flyer: Caregiver</fullName>
+                <default>false</default>
+                <label>Health Net Flyer: Caregiver</label>
+            </value>
+            <value>
+                <fullName>Health Net Flyer: Consumer</fullName>
+                <default>false</default>
+                <label>Health Net Flyer: Consumer</label>
+            </value>
+            <value>
+                <fullName>ID&apos;d Leader (COOL)</fullName>
+                <default>false</default>
+                <label>ID&apos;d Leader (COOL)</label>
+            </value>
+            <value>
+                <fullName>Leader (COOL)</fullName>
+                <default>false</default>
+                <label>Leader (COOL)</label>
+            </value>
+            <value>
+                <fullName>Network: Alumni</fullName>
+                <default>false</default>
+                <label>Network: Alumni</label>
+            </value>
+            <value>
+                <fullName>Other (Use notes area below)</fullName>
+                <default>false</default>
+                <label>Other (Use notes area below)</label>
+            </value>
+            <value>
+                <fullName>Picture</fullName>
+                <default>false</default>
+                <label>Picture</label>
+            </value>
+            <value>
+                <fullName>Picture/Quote</fullName>
+                <default>false</default>
+                <label>Picture/Quote</label>
+            </value>
+            <value>
+                <fullName>Quote</fullName>
+                <default>false</default>
+                <label>Quote</label>
+            </value>
+            <value>
+                <fullName>Referral from AAH</fullName>
+                <default>false</default>
+                <label>Referral from AAH</label>
+            </value>
+            <value>
+                <fullName>Referral from former student</fullName>
+                <default>false</default>
+                <label>Referral from former student</label>
+            </value>
+            <value>
+                <fullName>Referral from Union</fullName>
+                <default>false</default>
+                <label>Referral from Union</label>
+            </value>
+            <value>
+                <fullName>Senior Activity Centers</fullName>
+                <default>false</default>
+                <label>Senior Activity Centers</label>
+            </value>
+            <value>
+                <fullName>Union list</fullName>
+                <default>false</default>
+                <label>Union list</label>
+            </value>
+            <value>
+                <fullName>Union Meeting</fullName>
+                <default>false</default>
+                <label>Union Meeting</label>
+            </value>
+            <value>
+                <fullName>Waiting List</fullName>
+                <default>false</default>
+                <label>Waiting List</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

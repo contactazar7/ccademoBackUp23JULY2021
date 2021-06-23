@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_Provider_List</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Age__c</columns>
+    <columns>Email__c</columns>
+    <columns>Phone_number__c</columns>
+    <columns>Count_of_Affiliated_Consumer__c</columns>
+    <columns>CONTACT.RECORDTYPE</columns>
+    <columns>Status__c</columns>
+    <columns>Training_status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Demo Provider List</label>
+</ListView>

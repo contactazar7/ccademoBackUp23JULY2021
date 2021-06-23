@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CPR_Certificate_expiry_in_15_days</fullName>
+        <description>CPR Certificate expiry in 15 days</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>demo@cube84user.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CPR_Expiry_in_15_days</template>
+    </alerts>
+    <alerts>
+        <fullName>CPR_Certificate_expiry_in_180_days</fullName>
+        <description>CPR Certificate expiry in 180 days</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>demo@cube84user.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CPR_Expiry_in_6_months</template>
+    </alerts>
+    <alerts>
+        <fullName>CPR_Certificate_expiry_in_90_days</fullName>
+        <description>CPR Certificate expiry in 90 days</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>demo@cube84user.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CPR_Expiry_in_3_months</template>
+    </alerts>
+    <alerts>
+        <fullName>Message_Recruitment_Manager_to_Remove_and_Create_opening</fullName>
+        <description>Message Recruitment Manager to Remove and Create opening</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>demo@cube84user.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Student_removal_request</template>
+    </alerts>
+    <alerts>
+        <fullName>Message_Recruitment_Manager_to_Transfer_and_Create_opening</fullName>
+        <description>Message Recruitment Manager to Transfer and Create opening</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>demo@cube84user.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Student_Transfer_request</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Flag_Update</fullName>
+        <field>Severity__c</field>
+        <literalValue>Low</literalValue>
+        <name>Flag Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Request Student Removal</fullName>
+        <actions>
+            <name>Message_Recruitment_Manager_to_Remove_and_Create_opening</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>SFDC_Enrollment__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Request Student Removal</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Request Student Transfer</fullName>
+        <actions>
+            <name>Message_Recruitment_Manager_to_Transfer_and_Create_opening</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>SFDC_Enrollment__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Request Student Transfer</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

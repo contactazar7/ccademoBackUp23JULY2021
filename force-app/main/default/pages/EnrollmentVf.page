@@ -1,0 +1,79 @@
+<apex:page standardController="SFDC_Enrollment__c" extensions="AddEnrollments" sidebar="false" recordSetVar="unused" lightningStylesheets="true">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <apex:slds />
+        <style type="text/css">
+        body .bPageBlock .pbSubheader, .slds-vf-scope .bPageBlock .pbSubheader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid transparent;
+    padding: 0 .5rem;
+    width: 100%;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    background-color: rgb(250 250 249 / 0%);
+}
+    </style>
+    <apex:form >
+            
+    <apex:pageBlock id="pb">
+           <div style="padding-left: 600px;">
+        <apex:pageblocksection title="Mark Students Results and Credits" collapsible="false"/>
+            </div>  
+
+      <apex:pageMessages />      
+      <apex:variable var="rowNumber" value="{!0}"/>
+        <apex:pageBlockTable id="thetable" title="Enrollments" var="acc" value="{!EnrollmentList}">
+          <apex:column headerValue="No." style="width:20px; text-align:center;" headerClass="centertext">
+            <apex:outputText value="{0}" style="text-align:center;">
+              <apex:param value="{!rowNumber+1}" />
+            </apex:outputText>
+          </apex:column>
+          <apex:column headerValue="Class" >
+            <apex:outputField value="{!acc.Class__c}"/>
+          </apex:column>
+          <apex:column headerValue="Enrollment #" >
+            <apex:inputField value="{!acc.Name}"/>
+          </apex:column>
+
+          <apex:column headerValue="Contact" >
+            <apex:outputField value="{!acc.Contact__c}" />
+          </apex:column>
+
+         <apex:column headerValue="Enrollment Status" >
+            <apex:inputField value="{!acc.Status__c}"/>
+          </apex:column>
+          
+          <apex:column headerValue="Pass/DNP" >
+            <apex:inputField value="{!acc.Pass_DNP__c}"/>
+          </apex:column>
+          
+          <apex:column headerValue="Credit Score" >
+            <apex:inputField value="{!acc.Mid_Point_Assessment_Score__c}"/>
+          </apex:column>
+          
+          <apex:column headerValue="GPA">
+            <apex:inputField value="{!acc.Final_Assessment_Score1__c}"/>
+          </apex:column>
+
+        
+          <apex:column >
+           <!-- <apex:commandButton value="Delete" action="{!deleteRow}" reRender="pb">
+              <apex:param name="rowIndex" value="{!rowNumber}"/>
+            </apex:commandButton>-->
+            <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+          </apex:column>
+        </apex:pageBlockTable>
+     <!-- <apex:commandButton action="{!addRow}" value="Add Enrollment" reRender="pb"/>  -->    
+      <apex:pageBlockButtons location="bottom" >
+          <div style ="slds-button slds-button_brand">
+              <apex:commandButton value="Save" action="{!save}" />
+        <apex:commandButton value="Back to class" action="{!cancel}"/></div>
+      </apex:pageBlockButtons>           
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

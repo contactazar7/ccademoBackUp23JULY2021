@@ -1,0 +1,215 @@
+<apex:page controller="participationform_contr" standardStylesheets="false" showheader="false" sidebar="false" docType="html-5.0">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          lang="en"/>
+    <style>
+        .logoalign {
+        display: block;
+        margin-center: auto;
+        margin-left: auto;
+        width: 300px;
+        height:150px;
+        }
+        
+        .paragraphs{
+        display: block;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        margin-left: 0;
+        margin-right: 2em;
+        }
+        
+        .inputAligns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top:15px;
+        }
+        
+        .inputChkAlign {
+        display: flex;
+        justify-content: space-between;
+        margin-top:15px;
+        }
+        
+        .inputchkbox {
+        margin-right:700px !important;
+        width: 20px;
+        height: 20px;
+        background-color: blue;
+        border: 1px solid black;
+        }
+        
+        .inputAligns .pull-left {
+        display: flex;
+        align-items: center;
+        }
+        
+        .button1
+        {
+        background-color:#42ABD7;
+        font-weight:bold;
+        color:#2C4F5C;
+        border: none;
+        padding: 20px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 18px;
+        align-items: right;
+        align:right
+        }
+    </style>
+    
+    <apex:stylesheet value="{!$Resource.consumer_form}"/> 
+    <div class="form-box" style="margin:20px;padding-bottom:60px;">
+        <apex:image id="theImage" value="{!$Resource.CLTCEC}"  styleClass="logoalign" alt="Description of image here"/>
+        <div class="row" style="width:100%"> 
+            <apex:form >
+                <apex:pageMessages id="showmsg"></apex:pageMessages>
+                <div>
+                    <div id="consumerform1id" style="display:{!if(consumerform1 == True, "block", "none")};padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:20px;">
+                        <h3 class="mb-0 bold">Participation Form</h3>
+                        <p class="small mb-3">
+                            <em>(This form required some information from your end!)<br/>The below fields all are mandatory!!</em>
+                        </p>
+                        <div class="form-group has-feedback" >
+                            <div class="position-relative" style="margin-top:30px;margin-bottom:30px;">
+                                <div class="inputAligns">
+                                    <!--styleClass="form-control inputAligns"-->
+                                    <span> 
+                                        <apex:input id="seekerfirstnameid"
+                                                    value="{!seekerfirstname}"
+                                                    html-placeholder="Enter Your First Name*"
+                                                    styleClass="form-control inputAligns"
+                                                    style="width:500px;"
+                                                    type="text"
+                                                    /> 
+                                    </span>
+                                </div>
+                                <div class="inputAligns">
+                                    <span >
+                                        <apex:input id="seekerlastnameid"
+                                                    value="{!seekerlastname}"
+                                                    html-placeholder="Enter Your Last Name*"
+                                                    styleClass="form-control inputAligns"
+                                                    style="width:500px;"
+                                                    type="text"
+                                                    /> 
+                                    </span>
+                                </div>
+                                <div class="inputAligns">
+                                    <span >
+                                        <apex:input id="seekerageid"
+                                                    value="{!seekerage}"
+                                                    html-placeholder="Enter Your Age*"
+                                                    styleClass="form-control inputAligns"
+                                                    style="width:500px;"
+                                                    type="number"
+                                                    /> 
+                                    </span>
+                                </div>
+                                <div class="inputAligns">
+                                    <span >
+                                        <apex:selectList id="Choosegenderid" value="{!selectvals}" size="1" 
+                                                         styleClass="form-control inputAligns"
+                                                         style="width:500px;"
+                                                         title="Choose Your Gender"
+                                                         >
+                                            <apex:selectOption itemValue="ChooseYourGender" itemLabel="Choose Your Gender"/>
+                                            <apex:selectOption itemValue="Male" itemLabel="Male"/>
+                                            <apex:selectOption itemValue="Female" itemLabel="Female"/>
+                                            <apex:selectOption itemValue="Other" itemLabel="Other"/>
+                                        </apex:selectList> 
+                                    </span>
+                                </div>
+                                <div class="inputAligns">
+                                    <span >
+                                        <apex:input id="seekeremailid"
+                                                    value="{!seekeremail}"
+                                                    html-placeholder="Enter Your Valid Email Address*"
+                                                    styleClass="form-control inputAligns"
+                                                    style="width:500px;"
+                                                    type="email"
+                                                    /> 
+                                    </span>
+                                </div>
+                                <div class="inputAligns">
+                                    <span >
+                                        <apex:input id="seekerphoneid"
+                                                    value="{!seekerphone}"
+                                                    html-placeholder="Enter Your Valid Phone Number*"
+                                                    styleClass="form-control inputAligns"
+                                                    style="width:500px;"
+                                                    type="tel"
+                                                    /> 
+                                    </span>
+                                </div>
+                              <!--  <div class="inputAligns">
+                                    <span >
+                                        <apex:input id="educationqualid"
+                                                    value="{!educationsqual}"
+                                                    html-placeholder="Enter Your Qualification Degree*"
+                                                    styleClass="form-control inputAligns"
+                                                    style="width:500px;"
+                                                    type="tel"
+                                                    /> 
+                                    </span>
+                                </div> -->
+                                <div style="padding-left:0px;padding-top:5px;padding-bottom:10px;">
+                                    <span >
+                                        <P style="padding-left:20px;padding-top:50px;padding-bottom:0px;">
+                                            <apex:inputCheckbox id="C_Interested_in_availing_services_with_CLTid"
+                                                                value="{!C_Interested_in_availing_services_with_CLT}"
+                                                                styleClass="inputchkbox"
+                                                                />&nbsp;&nbsp;&nbsp;<b>Interested in availing services with CLTCEC? </b>
+                                        </P>
+                                    </span>
+                                </div>
+                                <div style="padding-left:20px;padding-top:0px;padding-bottom:15px;"> 
+                                    <span >
+                                        <P style="font-weight:bold;font-style:sans-serif;">
+                                            <apex:inputCheckbox id="Acknowledgement_CheckboxId"
+                                                                value="{!Acknowledgement_Checkbox}"
+                                                                styleClass="inputchkbox"
+                                                                required="true"
+                                                                /> &nbsp;
+                                            I acknowledge that all the answers provided over the phone are true and accurate to the best of my knowledge.  
+                                        </P>
+                                    </span>
+                                </div> 
+                            </div> 
+                        </div>
+                        <div class="slds-align_absolute-center" Style="padding-top:15px;padding-right:20px;font-weight:bold;font-size:15px;">
+                            <span>
+                                <apex:commandButton action="{!submit}" id="formfour_submit"
+                                                    value="Submit" title="Click to Submit the form"
+                                                    styleClass="button1" style="float:centre;padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:50px;"/>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </apex:form> 
+        </div>
+        <div id="consumerform2id" style="display:{!if(consumerthankyoupage == True, "block", "none")};margin:20px;padding-top:30px;padding-bottom:10px;padding-left:50px;padding-right:20px;">
+            <header style="text-align:center" id="header">
+                <h1 >  
+                    THANK YOU!
+                </h1>
+                <div> 
+                    <span style='font-size:150px;color:green'>&#10003;</span>
+                </div>  
+            </header>
+            <p style="text-align:center">
+                Thanks a bunch for filling that out. It means a lot to us, just like you do! We really appreciate you giving us a moment of your time today. Thanks for being you.
+            </p>
+            <div class="slds-align_absolute-center" style="display:{!if(consumerthankyoupage == True, "block", "none")};padding-top:20px;padding-right:20px;font-weight:bold;font-size:15px;">
+                <span>
+                    <apex:outputLink style="float:right;padding-top:10px;padding-bottom:10px;padding-left:50px;padding-right:50px;"
+                                     value="https://cltcec.org/">Click here to go cltcec.org</apex:outputLink>
+                </span>
+            </div>
+        </div>
+    </div>
+</apex:page>

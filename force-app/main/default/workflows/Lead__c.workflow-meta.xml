@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_forms_to_Providers_and_consumers</fullName>
+        <description>Email forms to Providers and consumers</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Form_intimation</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_forms_to_Providers_and_consumers_1</fullName>
+        <ccEmails>aiswarya.m@cube84.com</ccEmails>
+        <description>Email forms to Providers and consumers 1</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Form_intimation</template>
+    </alerts>
+    <rules>
+        <fullName>Send form</fullName>
+        <actions>
+            <name>Email_forms_to_Providers_and_consumers</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead__c.Qualified__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send form 2</fullName>
+        <actions>
+            <name>Email_forms_to_Providers_and_consumers_1</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead__c.Qualified__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_home_care_provider_notification</fullName>
+        <ccEmails>aiswarya.m@cube84.com</ccEmails>
+        <description>New home care provider notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>demo@cube84user.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Home_care_provider_Contact_notification</template>
+    </alerts>
+    <rules>
+        <fullName>Home care provider contact notification</fullName>
+        <actions>
+            <name>New_home_care_provider_notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Home Care Providers</value>
+        </criteriaItems>
+        <description>Notify the admin that a new Home care provider contact is created.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

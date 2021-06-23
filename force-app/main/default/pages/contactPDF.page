@@ -1,0 +1,40 @@
+<apex:page controller="generatePDFcnt" renderas="pdf" applyBodyTag="false">
+    <html>
+        <head>
+            <style>
+                @page {
+                size: letter;
+                margin: 25mm;
+                @top-center {
+                content: "Sample";
+                }
+                @bottom-center {
+                content: "Page " counter(page) " of " counter(pages);
+                }
+                }
+                .page-break {
+                display:block;
+                page-break-after:always;
+                }
+                body {
+                font-family: Arial Unicode MS;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="page-break"><h1>
+                <p><apex:image id="theImage" value="{!$Resource.cltcec_logo}" style="float:right;" width="200" height="100" alt="CLTCEC LOGO"/></p>
+                </h1>
+               
+                <apex:panelGrid columns="1" width="100%">
+                    <!--
+                    <apex:outputText value="{!contact.Name}"/>
+                    <apex:outputText value="{!contact.email}"></apex:outputText>
+                    <apex:outputText value="{!contact.Phone_number__c}"></apex:outputText>
+                    <apex:outputText value="{!contact.Age__c}"></apex:outputText>
+                    <apex:outputText value="{!contact.Gender__c}"></apex:outputText>
+                    <apex:outputText value="{!contact.Age__c}"></apex:outputText> -->
+                </apex:panelGrid></div>
+        </body>
+    </html>
+</apex:page>

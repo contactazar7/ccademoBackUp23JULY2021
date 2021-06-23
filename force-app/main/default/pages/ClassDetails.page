@@ -1,0 +1,14 @@
+<apex:page standardController="SFDC_Class__c" renderAs="PDF">    
+    <apex:form id="thfrm">
+      <center style="font-size:18px;font-weight:bold">Class Details</center>
+        <br/>
+        <table>
+            <tr><td><img src="https://cube846-dev-ed--c.visualforce.com/resource/1609862289000/CLTCEC" width="200" height="150"/></td></tr>
+            <tr><td><b></b></td><td></td></tr>
+            <tr><td><b>Class Name : </b></td><td>{!SFDC_Class__c.Name}</td></tr>
+            <tr><td><b>Start Date : </b></td><td>{!SFDC_Class__c.Start_Date__c}</td></tr>
+            <tr><td><b>Start Time : </b></td><td>{!SFDC_Class__c.Start_Time__c}</td></tr>
+            <tr><td><b>Instructor : </b></td><td>{!SFDC_Class__c.Instructor_1__c}</td></tr>
+        </table>
+    </apex:form>
+ </apex:page>

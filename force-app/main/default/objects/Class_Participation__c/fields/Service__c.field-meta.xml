@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service__c</fullName>
+    <externalId>false</externalId>
+    <label>Service</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Retreat</fullName>
+                <default>false</default>
+                <label>Retreat</label>
+            </value>
+            <value>
+                <fullName>Luncheon</fullName>
+                <default>false</default>
+                <label>Luncheon</label>
+            </value>
+            <value>
+                <fullName>Pre-GED</fullName>
+                <default>false</default>
+                <label>Pre-GED</label>
+            </value>
+            <value>
+                <fullName>ESL</fullName>
+                <default>false</default>
+                <label>ESL</label>
+            </value>
+            <value>
+                <fullName>Employment Workshop</fullName>
+                <default>false</default>
+                <label>Employment Workshop</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

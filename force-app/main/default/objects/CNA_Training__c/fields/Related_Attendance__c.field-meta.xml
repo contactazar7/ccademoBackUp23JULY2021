@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Attendance__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Related Attendance</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.Roster__c</field>
+            <operation>equals</operation>
+            <valueField>Attendance__c.Roaster__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Attendance__c</referenceTo>
+    <relationshipLabel>CNA Trainings</relationshipLabel>
+    <relationshipName>CNA_Trainings</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

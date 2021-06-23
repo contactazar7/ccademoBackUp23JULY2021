@@ -1,0 +1,218 @@
+<aura:component controller="ClassManagementController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    
+    
+    
+    <aura:html tag="style">
+       
+        
+        [lightning-input_input-host]
+        {
+        display: inline-block;
+        }
+        .slds-scope .slds-text-color_error
+        {
+        display: inline-block;
+        padding: 5px;
+        }
+        
+        html body.sfdcBody
+        {
+        background: url(/_slds/images/themes/lightning_blue/lightning_blue_background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        }    
+        .slds-card__body
+        {
+        height: 300px;
+        overflow: scroll;
+        }
+    </aura:html>
+    <aura:attribute name="title" type="String" default="Enrollment"/>
+    
+    <aura:attribute type="SFDC_Enrollment__c[]" name="enrollmentList"/>
+    <aura:attribute type="Contact[]" name="contactList"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="openmodal" type="boolean"/>
+    <aura:attribute name="classId" type="String" />
+    <aura:attribute name="selectedContacts" type="List" />
+    <aura:attribute name="customURL" type="String" />
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    
+    <aura:handler name="init"  value="{!this}"  action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!v.isModalOpen}">
+        
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container" id="popup-container" style="width: 99%; max-width: 99%;">
+                
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeModal}" alternativeText="close" variant="bare-inverse" class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">STUDENT DETAILS</h2> 
+                </header>                   
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    
+                    
+                    <table aria-multiselectable="true" class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" role="grid"> 
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Name</div>
+                                </th>
+                                <!--<th scope="col">
+                                    <th scope="col" style="width:50px;max-width:60px;text-align:center;">Qualified</th>
+                                </th> -->
+                                
+                                <th scope="col">
+                                    <div class="slds-truncate">Status</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Training Status</div>
+                                </th> 
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.contactList}" var="con">
+                                <tr>
+                                    <td>
+                                        <ui:inputCheckbox aura:id="checkbox" click="{!c.handleCheck}" name="{!con.Id}"/>
+                                    </td>
+                                    <td data-label="Name">
+                                        <div class="slds-truncate" title="Name">{!con.Name}</div>
+                                    </td>
+                                    <!--<td data-label="Qualified">
+                                        <div class="slds-truncate" title="Qualified">{!con.Qualified__c}</div>
+                                    </td>-->
+                                    <td data-label="Status">
+                                        <div class="slds-truncate" title="Status">{!con.Status__c}</div>
+                                    </td>
+                                    <td data-label="Training Status">
+                                        <div class="slds-truncate" title="Training Status">{!con.Training_status__c}</div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                    
+                </div>
+                
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{!c.closeModal}"/>
+                    <lightning:button variant="brand" label="Add to Class" title="Add to Class" onclick="{!c.createRecords}"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+    
+    
+    <div class="slds-brand-band slds-brand-band_medium">
+        <div class="crradious slds-theme_backgroundColor-lightblue" style="    background-radius: 35px;
+                                                                           padding-top: 54px;
+                                                                           bakcground: #FAFAF9 !important;
+                                                                           border: 1px solid #FAFAF9;
+                                                                           border-radius: 35px;
+                                                                           background-color: #D9DBDD;">
+            
+            
+            <div class="slds-form-element buttons slds-text-align_center"  style="padding-bottom:25px;">
+                <lightning:button variant="brand"  label="Add New Student" title="Add NeW Student" onclick="{! c.openModal }" />
+                <lightning:button variant="brand"  label="Back to Class" title="Back to Class" onclick="{! c.backtoClass }" />
+            </div>
+            <!-- <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped"> -->
+            <lightning:card variant="Narrow" title="Enrollment"  iconName="custom:custom51" >
+                
+                <table class="slds-table slds-table_bordered slds-no-row-hover slds-table_cell-buffer">        
+                    
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="S.No">S.No</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Student Name">Student Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Class Name" type="Url">Class Name</div>
+                            </th>
+                            <th scope="col">
+                                <div  title="Status">Status</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Remove">Actions</div>
+                            </th>
+                            <!--<th scope="col">
+                    <div class="slds-truncate" title="Remove">Remove</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Transfer">Transfer</div>
+                </th>-->
+                            <!-- <th scope="col">
+                        <div class="slds-truncate" title="Upload">Upload</div>
+                    </th>  -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.enrollmentList}" var="a"  indexVar="i">
+                            <tr>
+                                <td data-label="S.No" class="slno">
+                                    {!i+1}
+                                     
+                                </td>
+                                <td data-label="Student Name"  class="stuno">
+                                    <a href="{!v.customURL+a.Id+'/view'}" target="_blank" ><div class="slds-truncate" title="">{!a.Contact__r.Name}</div></a>
+                                </td>
+                                <td data-label="Class Name" class="clname">
+                                    <div class="slds-truncate" title="">{!a.Class__r.Name}</div>
+                                </td>
+                                <td data-label="Status">
+                                    <div  title="">{!a.Status__c}</div>
+                                </td>
+                                <td>
+                                    <lightning:button variant="base" label="Remove" title="Remove" onclick="{! c.remove }" value="{!a.Id}"/> || 
+                                    <aura:if isTrue="{! a.Status__c != 'Request Student Transfer'}">
+                                        <lightning:button variant="base" label="Transfer" title="Transfer " onclick="{! c.transfer }" value="{!a.Id}" /> || 
+                                        <aura:set attribute="else">
+                                            <lightning:button variant="base" label="Transfer" title="Transfer" disabled="true" /> || 
+                                        </aura:set>
+                                    </aura:if>
+                                    <c:fileUploader aura:id="fileUploaderID" parentId="{!a.Id}"/>
+                                    
+                                    <!--<lightning:button variant="base" label="Upload" title="Upload " onclick="{! c.upload }"/>-->
+                                </td>
+                                <!--<td>
+                        
+                        <aura:if  isTrue="{!(a.Status__c !='Request Student Removal')}" >
+                            <lightning:button variant="base" label="Remove" title="Remove" onclick="{! c.remove }" value="{!a.Id}"/>
+                            <aura:set attribute="else">
+                                <lightning:button variant="base" label="Remove" title="Remove" disabled="true"/>
+                                
+                            </aura:set>
+                        </aura:if>
+                    </td>
+                    <td>
+                        <aura:if  isTrue="{!(a.Status__c !='Request Student Transfer')}" >
+                            <lightning:button variant="base" label="Transfer" title="Transfer " onclick="{! c.transfer }" value="{!a.Id}" />
+                            <aura:set attribute="else">
+                                <lightning:button variant="base" label="Transfer" title="Transfer" disabled="true"/>
+                                
+                            </aura:set>
+                        </aura:if>
+                    </td>-->
+                                <!--   <c:fileUploader aura:id="fileUploaderID"/> 
+                    <td>
+                          <lightning:button variant="base" label="Upload" title="Upload " onclick="{! c.upload }"/>
+                    </td>  -->
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                    
+                </table>
+            </lightning:card>
+            <br/><br/></div></div>
+    
+    <!--  <lightning:button variant="base" label="Add Student" title="Add Student" onclick="{! c.addStudent }" /> -->
+    
+</aura:component>

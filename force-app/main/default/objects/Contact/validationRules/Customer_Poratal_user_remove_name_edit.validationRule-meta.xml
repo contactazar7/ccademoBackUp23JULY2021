@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Poratal_user_remove_name_edit</fullName>
+    <active>true</active>
+    <description>tThrow an error msg for customer user&apos;s.when they are edit the provider records</description>
+    <errorConditionFormula>AND ( 
+OR(
+   ISCHANGED( LastName ), 
+    ISCHANGED( FirstName )
+),
+
+   ISPICKVAL($User.UserType,&quot;PowerCustomerSuccess&quot;) 
+
+)</errorConditionFormula>
+    <errorMessage>You Don&apos;t  Edit Have Access.Please Ask Your Administartor</errorMessage>
+</ValidationRule>
